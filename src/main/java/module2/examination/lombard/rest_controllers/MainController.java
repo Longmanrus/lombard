@@ -22,7 +22,6 @@ public class MainController {
     @PreAuthorize("hasAuthority('user')")
     public ResponseEntity<List<PledgeTicket>> getAllTickets(){
         List<PledgeTicket> tickets = ticketRepo.findAll();
-        System.out.println("hello");
         if (!tickets.isEmpty()) {
             return new ResponseEntity<>(tickets, HttpStatus.OK);
         }else {
